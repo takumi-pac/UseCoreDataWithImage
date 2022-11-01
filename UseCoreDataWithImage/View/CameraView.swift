@@ -10,57 +10,70 @@ import SwiftUI
 
 struct CameraView: View {
     
-    @State var imageData : Data = .init(capacity:0)
-    @State var source:UIImagePickerController.SourceType = .photoLibrary
+    @ObservedObject var viewModel : ViewModel
     
-    @State var isActionSheet = false
-    @State var isImagePicker = false
+    @Binding var imageData : Data
+    @Binding var source:UIImagePickerController.SourceType
+    
+    @Binding var image:Image
+    
+    @Binding var isActionSheet:Bool
+    @Binding var isImagePicker:Bool
     
     var body: some View {
-        NavigationView{
-            VStack(spacing:0){
-                ZStack{
-                    NavigationLink(
-                        destination: Imagepicker(show: $isImagePicker, image: $imageData, sourceType: source),
-                        isActive:$isImagePicker,
-                        label: {
-                            Text("")
+        
+        VStack(spacing:0){
+            ZStack{
+                NavigationLink(
+                    destination: Imagepicker(show: $isImagePicker, image: $imageData, sourceType: source),
+                    isActive:$isImagePicker,
+                    label: {
+                        Text("")
+                    })
+                VStack{
+                    HStack(spacing:30){
+                        Text("photo")
+                        image
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(10)
+                        Button(action: {
+                            self.source = .photoLibrary
+                            self.isImagePicker.toggle()
+                        }, label: {
+                            Text("Upload")
                         })
-                    VStack{
-                        if imageData.count != 0{
-                            Image(uiImage: UIImage(data: self.imageData)!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 250)
-                                .cornerRadius(15)
-                                .padding()
-                        }
-                        HStack(spacing:30){
-                            Button(action: {
-                                self.source = .photoLibrary
-                                self.isImagePicker.toggle()
-                            }, label: {
-                                Text("Upload")
-                            })
-                            Button(action: {
-                                self.source = .camera
-                                self.isImagePicker.toggle()
-                            }, label: {
-                                Text("Take Photo")
-                            })
-                        }
+                        Button(action: {
+                            self.source = .camera
+                            self.isImagePicker.toggle()
+                        }, label: {
+                            Text("Take Photo")
+                        })
+                        Spacer()
                     }
+                    .padding()
                 }
             }
-            .navigationBarTitle("Home", displayMode: .inline)
         }
-        .ignoresSafeArea(.all, edges: .top)
-        .background(Color.primary.opacity(0.06).ignoresSafeArea(.all, edges: .all))
+        .onAppear(){
+            loadImage()
+        }
+        .navigationBarTitle("Add Task", displayMode: .inline)
+    }
+    
+    func loadImage() {
+        if imageData.count != 0{
+            viewModel.imageData = imageData
+            self.image = Image(uiImage: UIImage(data: imageData) ?? UIImage(systemName: "photo")!)
+        }else{
+            self.image = Image(uiImage: UIImage(data: imageData) ?? UIImage(systemName: "photo")!)
+        }
     }
 }
 
-struct CameraView_Previews: PreviewProvider {
-    static var previews: some View {
-        CameraView()
-    }
-}
+//struct CameraView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CameraView(viewModel: ViewModel(), imageData: , source: <#Binding<UIImagePickerController.SourceType>#>, image: <#Binding<Image>#>, isActionSheet: <#Binding<Bool>#>, isImagePicker: <#Binding<Bool>#>)
+//    }
+//}

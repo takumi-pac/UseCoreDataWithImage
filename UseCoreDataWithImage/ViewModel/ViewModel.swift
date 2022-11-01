@@ -11,6 +11,9 @@ import CoreData
 class ViewModel: ObservableObject {
     @Published var content = ""
     @Published var date = Date()
+    @Published var priority = 0
+    @Published var imageData:Data = Data.init()
+    
     @Published var isNewData: Bool = false
     @Published var updateItem: Task!
     
