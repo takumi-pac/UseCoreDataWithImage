@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01D6306D2911014200FB5461 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D6306C2911014200FB5461 /* ViewModel.swift */; };
+		01D63070291102B500FB5461 /* NewDataSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D6306F291102B500FB5461 /* NewDataSheet.swift */; };
+		01D6307329110B8B00FB5461 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D6307229110B8B00FB5461 /* ImagePicker.swift */; };
+		01D6307529110BDF00FB5461 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D6307429110BDF00FB5461 /* CameraView.swift */; };
 		01E4C73F2910FF70000542A5 /* UseCoreDataWithImageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4C73E2910FF70000542A5 /* UseCoreDataWithImageApp.swift */; };
 		01E4C7412910FF70000542A5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E4C7402910FF70000542A5 /* ContentView.swift */; };
 		01E4C7432910FF72000542A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01E4C7422910FF72000542A5 /* Assets.xcassets */; };
@@ -16,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01D6306C2911014200FB5461 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		01D6306F291102B500FB5461 /* NewDataSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewDataSheet.swift; sourceTree = "<group>"; };
+		01D6307229110B8B00FB5461 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		01D6307429110BDF00FB5461 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		01E4C73B2910FF70000542A5 /* UseCoreDataWithImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UseCoreDataWithImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01E4C73E2910FF70000542A5 /* UseCoreDataWithImageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCoreDataWithImageApp.swift; sourceTree = "<group>"; };
 		01E4C7402910FF70000542A5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -23,6 +31,7 @@
 		01E4C7452910FF72000542A5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		01E4C7472910FF72000542A5 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		01E4C74A2910FF72000542A5 /* UseCoreDataWithImage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UseCoreDataWithImage.xcdatamodel; sourceTree = "<group>"; };
+		01FB078629111A6B007988DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +45,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01D6306E2911029F00FB5461 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01E4C7402910FF70000542A5 /* ContentView.swift */,
+				01D6306F291102B500FB5461 /* NewDataSheet.swift */,
+				01D6307429110BDF00FB5461 /* CameraView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		01D6307129110B7400FB5461 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				01D6307229110B8B00FB5461 /* ImagePicker.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		01E4C7322910FF70000542A5 = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +82,11 @@
 		01E4C73D2910FF70000542A5 /* UseCoreDataWithImage */ = {
 			isa = PBXGroup;
 			children = (
+				01FB078629111A6B007988DD /* Info.plist */,
+				01D6307129110B7400FB5461 /* Model */,
+				01D6306E2911029F00FB5461 /* View */,
+				01E4C751291100E4000542A5 /* ViewModel */,
 				01E4C73E2910FF70000542A5 /* UseCoreDataWithImageApp.swift */,
-				01E4C7402910FF70000542A5 /* ContentView.swift */,
 				01E4C7422910FF72000542A5 /* Assets.xcassets */,
 				01E4C7472910FF72000542A5 /* Persistence.swift */,
 				01E4C7492910FF72000542A5 /* UseCoreDataWithImage.xcdatamodeld */,
@@ -71,6 +101,14 @@
 				01E4C7452910FF72000542A5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		01E4C751291100E4000542A5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				01D6306C2911014200FB5461 /* ViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D6306D2911014200FB5461 /* ViewModel.swift in Sources */,
 				01E4C74B2910FF72000542A5 /* UseCoreDataWithImage.xcdatamodeld in Sources */,
+				01D63070291102B500FB5461 /* NewDataSheet.swift in Sources */,
+				01D6307329110B8B00FB5461 /* ImagePicker.swift in Sources */,
 				01E4C7482910FF72000542A5 /* Persistence.swift in Sources */,
 				01E4C7412910FF70000542A5 /* ContentView.swift in Sources */,
 				01E4C73F2910FF70000542A5 /* UseCoreDataWithImageApp.swift in Sources */,
+				01D6307529110BDF00FB5461 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +320,8 @@
 				DEVELOPMENT_TEAM = 4H5X69X66X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UseCoreDataWithImage/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを使用します";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -292,7 +336,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,6 +351,8 @@
 				DEVELOPMENT_TEAM = 4H5X69X66X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = UseCoreDataWithImage/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "カメラを使用します";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -321,7 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
